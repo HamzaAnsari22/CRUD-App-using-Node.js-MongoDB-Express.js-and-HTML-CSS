@@ -1,0 +1,263 @@
+<%- include('../common/header') %> 
+<%- include('../common/side-bar') %> 
+
+<main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
+    <!-- Navbar -->
+    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" navbar-scroll="true">
+      <div class="container-fluid py-1 px-3">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
+            <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a></li>
+            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Dashboard</li>
+          </ol>
+          <h4 class="font-weight-bolder mb-0">Dashboard</h4>
+        </nav>
+        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+          <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+            <div class="input-group input-group-outline">
+              <input type="hidden" class="form-control">
+            </div>
+          </div>
+          <ul class="navbar-nav  justify-content-end">
+            <li class="nav-item d-flex align-items-center">
+
+              <form action="/logout" method="post">
+                <button type="submit" class="btn btn-sm btn-info">Logout</button>  
+              </form>
+            </li>
+            <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+              <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
+                <div class="sidenav-toggler-inner">
+                  <i class="sidenav-toggler-line"></i>
+                  <i class="sidenav-toggler-line"></i>
+                  <i class="sidenav-toggler-line"></i>
+                </div>
+              </a>
+            </li>
+      
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- End Navbar -->
+    <div class="container-fluid py-4">
+      <div class="row">
+        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+          <div class="card">
+            <div class="card-header p-3 pt-2">
+              <div class="icon icon-lg icon-shape bg-gradient-dark shadow-dark text-center border-radius-xl mt-n4 position-absolute">
+                <i class="material-icons opacity-10">attach_money</i>
+              </div>
+              <div class="text-end pt-1">
+                <p class="text-sm mb-0 text-capitalize">Total Withdrawals</p>
+                <h4 class="mb-0">20K USDT</h4>
+              </div>
+            </div>
+            <hr class="dark horizontal my-0">
+            <div class="card-footer p-3">
+              <p class="mb-0"><span class="text-success text-sm font-weight-bolder">+55% </span>than last week</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+          <div class="card">
+            <div class="card-header p-3 pt-2">
+              <div class="icon icon-lg icon-shape bg-gradient-primary shadow-primary text-center border-radius-xl mt-n4 position-absolute">
+                <i class="material-icons opacity-10">person</i>
+              </div>
+              <div class="text-end pt-1">
+                <p class="text-sm mb-0 text-capitalize">Today's Users</p>
+                <h4 class="mb-0">1K</h4>
+              </div>
+            </div>
+            <hr class="dark horizontal my-0">
+            <div class="card-footer p-3">
+              <p class="mb-0"><span class="text-success text-sm font-weight-bolder">+3% </span>than last month</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+          <div class="card">
+            <div class="card-header p-3 pt-2">
+              <div class="icon icon-lg icon-shape bg-gradient-success shadow-success text-center border-radius-xl mt-n4 position-absolute">
+                <i class="material-icons opacity-10">savings</i>
+              </div>
+              <div class="text-end pt-1">
+                <p class="text-sm mb-0 text-capitalize">Balance</p>
+                <h4 class="mb-0">50K USDC</h4>
+              </div>
+            </div>
+            <hr class="dark horizontal my-0">
+            <div class="card-footer p-3">
+              <p class="mb-0"><span class="text-success text-sm font-weight-bolder">+2% </span>than last month</p>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-sm-6">
+          <div class="card">
+            <div class="card-header p-3 pt-2">
+              <div class="icon icon-lg icon-shape bg-gradient-info shadow-info text-center border-radius-xl mt-n4 position-absolute">
+                <i class="material-icons opacity-10">weekend</i>
+              </div>
+              <div class="text-end pt-1">
+                <p class="text-sm mb-0 text-capitalize">Premium Version</p>
+                <h4 class="mb-0">Coming Soon</h4>
+              </div>
+            </div>
+            <hr class="dark horizontal my-0">
+            <div class="card-footer p-3">
+              <p class="mb-0"><span class="text-success text-sm font-weight-bolder">&nbsp</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row mt-4 mb-4">
+        <div class="col-lg-7 col-md-6 mb-md-0 mb-4">
+          <div class="card">
+            <div class="card-header pb-0">
+              <div class="row">
+                <div class="col-lg-6 col-7">
+                  <h6>Mission</h6>
+                  <p class="text-sm mb-0">
+
+                  </p>
+                </div>
+                <div class="col-lg-6 col-5 my-auto text-end">
+                  <div class="dropdown float-lg-end pe-4">
+      
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-body px-0 pb-2">
+              <div class="table-responsive" >
+                <p style="text-align:justify; margin-left: 30px; margin-right: 30px;">
+                  Tether (USDT) is one of the most widely used stablecoins in the cryptocurrency world, but its controversial history and lack of transparency have raised concerns among investors. As a result, many cryptocurrency exchanges and investors are turning to USDC, a newer stablecoin that offers greater transparency and regulatory compliance.<br><br>
+
+                  USDC is backed by the CENTRE Consortium, a group of reputable financial institutions that ensure every USDC token is backed by a corresponding amount of US dollars held in reserve. This level of transparency and regulation is not present with USDT, which has faced multiple lawsuits and investigations over its alleged lack of backing and market manipulation.<br><br>
+                  
+                  Furthermore, USDT has faced criticism for its close association with the Bitfinex exchange, which has faced its own share of controversy and legal issues. This close relationship has raised concerns about the stability of USDT, which could be affected if Bitfinex were to face significant financial difficulties.<br><br>
+                  
+                  In contrast, USDC has been embraced by major cryptocurrency exchanges and institutional investors, who see it as a more stable and reliable alternative to USDT. With greater transparency and regulatory oversight, USDC is quickly becoming the preferred stablecoin for many investors and traders.
+                  
+                  Overall, while USDT remains a widely used stablecoin, its lack of transparency and regulatory compliance has raised concerns among investors. As a result, many are turning to USDC as a more reliable and trustworthy alternative, with greater transparency and regulatory oversight.
+                </p>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5 col-md-6">
+          <div class="card h-60">
+            <div class="card-header pb-0">
+              <h6>Plans</h6>
+              <p class="text-sm">
+
+              </p>
+            </div>
+            <div class="card-body p-3">
+              <table class="table align-items-center mb-0">
+                <thead>
+                  <tr>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Investment (USDC)</th>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Profit / 100 USDC</th>
+                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Potential Profit</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="align-middle text-center text-sm">
+                      <span class="text-xs font-weight-bold"> 50-5000 </span>
+                    </td>
+                    <td class="align-middle text-center text-sm">
+                      <span class="text-xs font-weight-bold"> 1 USDT </span>
+                    </td>
+                    <td class="align-middle text-center text-sm">
+                      <span class="text-xs font-weight-bold"> 0.5-50 USDT </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="align-middle text-center text-sm">
+                      <span class="text-xs font-weight-bold"> 5001-15000 </span>
+                    </td>
+                    <td class="align-middle text-center text-sm">
+                      <span class="text-xs font-weight-bold"> 1.5 USDT </span>
+                    </td>
+                    <td class="align-middle text-center text-sm">
+                      <span class="text-xs font-weight-bold"> 75-225 USDT </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="align-middle text-center text-sm">
+                      <span class="text-xs font-weight-bold"> 15001-30000 </span>
+                    </td>
+                    <td class="align-middle text-center text-sm">
+                      <span class="text-xs font-weight-bold"> 0.4 ETH(Fixed) </span>
+                    </td>
+                    <td class="align-middle text-center text-sm">
+                      <span class="text-xs font-weight-bold"> 0.4 ETH </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="align-middle text-center text-sm">
+                      <span class="text-xs font-weight-bold"> 30001-60000 </span>
+                    </td>
+                    <td class="align-middle text-center text-sm">
+                      <span class="text-xs font-weight-bold"> 0.8 ETH(Fixed) </span>
+                    </td>
+                    <td class="align-middle text-center text-sm">
+                      <span class="text-xs font-weight-bold"> 0.8 ETH </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="align-middle text-center text-sm">
+                      <span class="text-xs font-weight-bold"> 60001-99999 </span>
+                    </td>
+                    <td class="align-middle text-center text-sm">
+                      <span class="text-xs font-weight-bold"> 1 ETH </span>
+                    </td>
+                    <td class="align-middle text-center text-sm">
+                      <span class="text-xs font-weight-bold"> 1 ETH </span>
+                    </td>
+                  </tr>
+                  </tbody>
+                  </table>
+                  <br><br>
+          
+            </div>
+            <p style="text-align:justify; margin-left: 30px; margin-right: 30px;">
+              <b>Earn a referral bonus of 2 USDT for each person you refer who completes a transaction of 100 USDC or more. Additionally, if you refer 50 or more individuals, you will receive a 5% of their transactions.
+              </b>
+              </p>
+          </div>
+        </div>
+      </div>
+      <footer class="footer py-4  ">
+        <div class="container-fluid">
+          <div class="row align-items-center justify-content-lg-between">
+            <div class="col-lg-6 mb-lg-0 mb-4">
+              <div class="copyright text-center text-sm text-muted text-lg-start">
+                © <script>
+                  document.write(new Date().getFullYear())
+                </script>,
+                 made with <i class="fa fa-heart"></i> by
+                 Cryptplus for a better way of living.
+              </div>
+            </div>
+            <div class="col-12 col-md-6">
+              <ul class="nav nav-footer justify-content-center justify-content-lg-end">
+                <li class="nav-item">
+                  <a href="https://discord.gg/4fbvKeyv" class="nav-link pe-0 text-white" target="_blank">Contact Us</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </main>  
+<%- include('../common/footer') %> 

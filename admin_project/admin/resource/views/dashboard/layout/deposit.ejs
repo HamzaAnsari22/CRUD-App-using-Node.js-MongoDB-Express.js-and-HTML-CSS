@@ -1,0 +1,179 @@
+<%- include('../common/header') %> 
+<%- include('../common/side-bar') %> 
+
+<main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
+    <!-- Navbar -->
+    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" navbar-scroll="true">
+      <div class="container-fluid py-1 px-3">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
+            <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a></li>
+            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Deposit</li>
+          </ol>
+          <h4 class="font-weight-bolder mt-2"> Deposit</h4>
+        </nav>
+        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+          <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+            <div class="input-group input-group-outline">
+              <input type="hidden" class="form-control">
+            </div>
+          </div>
+          <ul class="navbar-nav  justify-content-end">
+            <li class="nav-item d-flex align-items-center">
+              <form action="/logout" method="post">
+                <button type="submit" class="btn btn-sm btn-info">Logout</button>  
+              </form>
+              <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+                <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
+                  <div class="sidenav-toggler-inner">
+                    <i class="sidenav-toggler-line"></i>
+                    <i class="sidenav-toggler-line"></i>
+                    <i class="sidenav-toggler-line"></i>
+                  </div>
+                </a>
+              </li>
+ 
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- End Navbar -->
+    <div class="container-fluid py-4">      
+      <div class="row mt-0 mb-4">
+        <div class="col-lg-12 col-md-6 mb-md-0 mb-4">
+          <div class="card">
+            <div class="card-header pb-0">
+              <div class="row">
+                <div class="col-lg-6 col-7">
+                  <!-- <h6>Mission</h6> -->
+                  <p class="text-sm mb-0">
+              
+                  </p>
+                </div>
+                <div class="col-lg-6 col-5 my-auto text-end">
+                  <div class="dropdown float-lg-end pe-4">
+               
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-body px-0 pb-2">
+              <div class="table-responsive" >
+                <h6  style="text-align:justify; margin-left: 30px; margin-right: 30px;">HOW TO DEPOSIT:</h6>
+
+                <p style="text-align:justify; margin-left: 40px; margin-right: 30px;">
+                  The deposit process is simple: send USDC to receive USDT in return with profit mentioned in Plan on dashboard.
+                </p>
+                <p style="text-align:justify; margin-left: 40px; margin-right: 30px;">
+                  <b>Please note that we only accept USDC (BEP20) for deposits. Withdrawals with profits will be processed according to the plan mentioned on the Dashboard.</b>
+                </p>
+                <p style="text-align:justify; margin-left: 40px; margin-right: 30px;">
+                  <b> Note: Kindly add your wallet address to receive funds in settings tab if not added.</b>
+
+                 
+                </p>
+                <p style="text-align:justify; margin-left: 40px; margin-right: 30px;">
+                  <b> WARNING: If you make a mistake while depositing funds, you will not be able to recover them.</b>
+
+                 
+                </p>
+                <p style="text-align:justify; margin-left: 40px; margin-right: 30px;">
+                 Send USDC(BEP20) on this address:
+                </p>
+                <input type="text" value="0xc4c7253E277142765400893DbF613BD143BFFfEc" readonly style="border: 1px solid #ccc; padding: 5px; margin-left: 40px; margin-right: 30px; width: 400px;">
+                <form role="form" id="form" class="text-start" action="/deposit" method="POST" enctype="multipart/form-data" >
+
+                  <p style="text-align:justify; margin-left: 40px; margin-right: 30px;">
+                    <br>Enter USDC Amount you transferred: 
+                  </p>
+                  <input min="100" placeholder="min 100 USDC" type="number" name="amount" id="amount" style="border: 1px solid #ccc; padding: 5px; margin-left: 40px; margin-right: 30px;" required>
+                  <p style="text-align:justify; margin-left: 40px; margin-right: 30px;">
+                    <br>Upload Screenshot: 
+                  </p>
+                  <input type="file" accept="image/*" id="screenshot" name="screenshot" onchange="validateImage()" style="border: 1px solid #ccc; padding: 5px; margin-left: 40px; margin-right: 30px;" required> 
+                  <p style="text-align:justify; margin-left: 40px; margin-right: 30px; margin-top: 30px;">
+                   
+                  <button type="submit" id="submitBtn" class="btn btn-sm btn-info" style=" width: 100px;">Submit</button>    
+                  </p>   
+                  
+              </form>
+              </div>
+            </div>
+          </div>
+        </div>
+       
+      </div>
+     
+
+    
+      <script>
+        function validateImage() {
+          var fileInput = document.getElementById('screenshot');
+          var filePath = fileInput.value;
+          var allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
+          if (!allowedExtensions.exec(filePath)) {
+            alert('Please upload an image file (jpg, jpeg, png, gif).');
+            fileInput.value = '';
+            return false;
+          }
+          if (fileInput.files[0].size > 4000000) {
+            alert('The file size should not exceed 1MB.');
+            fileInput.value = '';
+            return false;
+          }
+          return true;
+        }
+        document.getElementById('submitBtn').addEventListener('click', function(e) {
+        e.preventDefault(); // prevent the form from submitting normally
+        var input = document.getElementById('amount').value;
+          if (input < 100) {
+            alert('Please enter a number greater than or equal to 100.');
+            return false;
+          }
+          if (!validateImage()) {
+            return false;
+          }
+         
+          swal('Success!', 'Thankyou for Deposit, deposit status will be updated shortly!.', 'success'); // show the SweetAlert success message
+          setTimeout(() => {
+            document.getElementById('form').submit(); // submit form here
+          }, 2000);
+      });
+      </script>
+
+      <footer class="footer py-4  ">
+        <div class="container-fluid">
+          <div class="row align-items-center justify-content-lg-between">
+            <div class="col-lg-6 mb-lg-0 mb-4">
+              <div class="copyright text-center text-sm text-muted text-lg-start">
+                © <script>
+                  document.write(new Date().getFullYear())
+                </script>,
+                made with <i class="fa fa-heart"></i> by
+                <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Creative Tim</a>
+                for a better web.
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <ul class="nav nav-footer justify-content-center justify-content-lg-end">
+                <li class="nav-item">
+                  <a href="https://www.creative-tim.com" class="nav-link text-muted" target="_blank">Creative Tim</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://www.creative-tim.com/presentation" class="nav-link text-muted" target="_blank">About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://www.creative-tim.com/blog" class="nav-link text-muted" target="_blank">Blog</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-muted" target="_blank">License</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </main>  
+<%- include('../common/footer') %> 
